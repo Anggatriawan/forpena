@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard with Categories and Right-Side Logo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            max-width: 150px;
+        }
+        .footer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-top: 1px solid #ddd;
+        }
+        /* Menyembunyikan kategori saat halaman di-refresh */
+        .category-section {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <!-- Logo dan Header -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="header">
+                    <div>
+                        <h1>Dashboard</h1>
+                        <p class="lead">Select a category to view relevant data.</p>
+                    </div>
+                    <!-- Logo di sebelah kanan -->
+                    <div>
+                        <img src="path/to/your/logo.png" alt="Logo" class="logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kategori Pilihan -->
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-4 text-center">
+                <button class="btn btn-primary w-100 mb-3" onclick="showCategory('category1')">Category 1</button>
+            </div>
+            <div class="col-md-4 text-center">
+                <button class="btn btn-secondary w-100 mb-3" onclick="showCategory('category2')">Category 2</button>
+            </div>
+        </div>
+
+        <!-- Kategori 1 dengan Form Input -->
+        <div id="category1" class="category-section">
+            <div class="card mt-5">
+                <div class="card-header text-center">
+                    <h3>Category 1 Data</h3>
+                </div>
+                <div class="card-body">
+                    <form id="formCategory1">
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">Nama</label>
+                            <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="jenisKelamin" class="form-label">Jenis Kelamin</label>
+                            <select class="form-control" id="jenisKelamin" required>
+                                <option value="">Pilih Jenis Kelamin</option>
+                                <option value="Laki-laki">Laki-laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="tempatLahir" class="form-label">Tempat Lahir</label>
+                            <input type="text" class="form-control" id="tempatLahir" placeholder="Masukkan Tempat Lahir" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="tanggalLahir" class="form-label">Tanggal Lahir</label>
+                            <input type="date" class="form-control" id="tanggalLahir" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nik" class="form-label">NIK</label>
+                            <input type="text" class="form-control" id="nik" placeholder="Masukkan NIK" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="alamatKTP" class="form-label">Alamat sesuai KTP</label>
+                            <textarea class="form-control" id="alamatKTP" rows="3" placeholder="Masukkan Alamat sesuai KTP" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pekerjaan" class="form-label">Pekerjaan</label>
+                            <input type="text" class="form-control" id="pekerjaan" placeholder="Masukkan Pekerjaan" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="agama" class="form-label">Agama</label>
+                            <select class="form-control" id="agama" required>
+                                <option value="">Pilih Agama</option>
+                                <option value="Islam">Islam</option>
+                                <option value="Kristen">Kristen</option>
+                                <option value="Katolik">Katolik</option>
+                                <option value="Hindu">Hindu</option>
+                                <option value="Budha">Budha</option>
+                                <option value="Konghucu">Konghucu</option>
+                            </select>
+                        </div>
+                        <!-- Tombol Next -->
+                        <button type="submit" class="btn btn-primary">Next</button>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-secondary" onclick="showCategory('category1')">Kembali</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kategori 2 -->
+        <div id="category2" class="category-section">
+            <div class="card mt-5">
+                <div class="card-header text-center">
+                    <h3>Category 2 Data</h3>
+                </div>
+                <div class="card-body">
+                    <p id="displayName">Nama: </p>
+                    <div class="mb-3">
+                        <label for="aktaKelahiran" class="form-label">Nomor Akta Kelahiran</label>
+                        <input type="text" class="form-control" id="aktaKelahiran" placeholder="Masukkan Nomor Akta Kelahiran" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tanggalAkta" class="form-label">Tanggal Akta Kelahiran</label>
+                        <input type="date" class="form-control" id="tanggalAkta" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="namaAyah" class="form-label">Nama Ayah</label>
+                        <input type="text" class="form-control" id="namaAyah" placeholder="Masukkan Nama Ayah" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="namaIbu" class="form-label">Nama Ibu</label>
+                        <input type="text" class="form-control" id="namaIbu" placeholder="Masukkan Nama Ibu" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="kotaAkta" class="form-label">Kabupaten/Kota tempat dikeluarkan Akta Kelahiran</label>
+                        <input type="text" class="form-control" id="kotaAkta" placeholder="Masukkan Kabupaten/Kota" required>
+                    </div>
+                    <button class="btn btn-primary" id="nextToSlide3">Next</button>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-secondary" onclick="showCategory('category1')">Kembali</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kategori 3 -->
+        <div id="category3" class="category-section">
+            <div class="card mt-5">
+                <div class="card-header text-center">
+                    <h3>Alasan Perubahan Nama</h3>
+                </div>
+                <div class="card-body">
+                    <p id="oldName">Nama Lama: </p>
+                    <p id="newName">input Nama Baru: </p>
+                    <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama" required>
+                    <div class="mb-3">
+                        <label for="alasanPerubahan" class="form-label">Alasan Perubahan Nama</label>
+                        <textarea class="form-control" id="alasanPerubahan" rows="3" placeholder="Masukkan Alasan Perubahan Nama" required></textarea>
+                    </div>
+                    <!-- Tombol untuk menampilkan data -->
+                    <button class="btn btn-primary" id="tampilkanData">Tampilkan Data</button>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-secondary" onclick="showCategory('category2')">Kembali</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal untuk Menampilkan Data -->
+        <div class="modal fade" id="dataModal" tabindex="-1" aria-labelledby="dataModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="dataModalLabel">Data Anda</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="modalData">
+                        <!-- Data ditampilkan di sini -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer text-center">
+            <p>&copy; 2024 Dashboard</p>
+        </div>
+    </div>
+
+    <script>
+        function showCategory(category) {
+            // Sembunyikan semua kategori
+            document.querySelectorAll('.category-section').forEach(function (el) {
+                el.style.display = 'none';
+            });
+            // Tampilkan kategori yang dipilih
+            document.getElementById(category).style.display = 'block';
+        }
+
+        document.getElementById('formCategory1').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const name = document.getElementById('nama').value;
+            document.getElementById('displayName').innerText = 'Nama: ' + name;
+            showCategory('category2');
+        });
+
+        document.getElementById('nextToSlide3').addEventListener('click', function () {
+            showCategory('category3');
+        });
+
+        document.getElementById('tampilkanData').addEventListener('click', function () {
+            const oldName = document.getElementById('nama').value;
+            const newName = document.getElementById('nama').value;
+            const reason = document.getElementById('alasanPerubahan').value;
+
+            const modalContent = `
+                <p>Nama Lama: ${oldName}</p>
+                <p>Nama Baru: ${newName}</p>
+                <p>Alasan Perubahan: ${reason}</p>
+            `;
+
+            document.getElementById('modalData').innerHTML = modalContent;
+            const modal = new bootstrap.Modal(document.getElementById('dataModal'));
+            modal.show();
+        });
+
+        // Tampilkan kategori pertama saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', function () {
+            showCategory('category1');
+        });
+    </script>
+</body>
+</html>

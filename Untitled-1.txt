@@ -1,0 +1,288 @@
+
+       ambil <small > di atas sesuaikan di bawah
+
+ <div id="diriSendiri-steps" style="display:none;">
+            <!-- Slide 1: Persyaratan -->
+            <div class="step-content" id="step1-diriSendiri">
+                <h4 class="mb-4">Persyaratan</h4>
+                <p class="mb-4">Pastikan semua persyaratan di bawah ini telah dipenuhi:</p>
+
+                <!-- Checklist Persyaratan -->
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="ktp-diriSendiri" required>
+                    <label class="form-check-label" for="ktp-diriSendiri">KTP</label>
+                    <small class="form-text text-muted">Silakan centang jika Anda memiliki KTP yang valid.</small>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="kk-diriSendiri" required>
+                    <label class="form-check-label" for="kk-diriSendiri">KK</label>
+                    <small class="form-text text-muted">Silakan centang jika Anda memiliki KK yang valid.</small>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="akta-diriSendiri" required>
+                    <label class="form-check-label" for="akta-diriSendiri">Akta Kelahiran</label>
+                    <small class="form-text text-muted">Silakan centang jika Anda memiliki Akta Kelahiran yang valid.</small>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="buku-nikah-diriSendiri" required>
+                    <label class="form-check-label" for="buku-nikah-diriSendiri">Buku Nikah/Akta Nikah</label>
+                    <small class="form-text text-muted">Silakan centang jika Anda memiliki Buku Nikah/Akta Nikah yang valid.</small>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="surat-pernyataan-diriSendiri" required>
+                    <label class="form-check-label" for="surat-pernyataan-diriSendiri">Surat Pernyataan perubahan nama diketahui kepala desa</label>
+                    <small class="form-text text-muted">Silakan centang jika Anda memiliki Surat Pernyataan yang sah.</small>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="surat-domisili-diriSendiri" required>
+                    <label class="form-check-label" for="surat-domisili-diriSendiri">Surat keterangan domisili</label>
+                    <small class="form-text text-muted">Silakan centang jika Anda memiliki Surat Keterangan Domisili yang valid.</small>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="surat-permohonan-diriSendiri" required>
+                    <label class="form-check-label" for="surat-permohonan-diriSendiri">Surat Permohonan</label>
+                    <small class="form-text text-muted">Silakan centang jika Anda memiliki Surat Permohonan yang lengkap.</small>
+                </div>
+
+                <!-- Tombol untuk melanjutkan ke langkah berikutnya -->
+                <button class="btn btn-primary mt-4" onclick="validateAndNext('step1-diriSendiri')">Next</button>
+            </div>
+        </div>
+
+        <style>
+            /* Perbesar ukuran checkbox dan tambahkan efek hover */
+            .form-check-input {
+                transform: scale(1.2);
+                /* Membuat checkbox lebih besar */
+                border: 2px solid #007bff;
+                /* Menambahkan border agar lebih terlihat */
+            }
+
+            .form-check-input:focus {
+                outline: none;
+                /* Menghilangkan outline default saat fokus */
+                border-color: #0056b3;
+                /* Ubah border saat fokus */
+            }
+
+            .form-check-label {
+                font-size: 1rem;
+                /* Ukuran font normal, tidak tebal */
+                color: #333;
+                /* Memberikan warna teks label */
+            }
+
+            .form-check-input:checked {
+                background-color: #007bff;
+                /* Menambahkan warna latar belakang saat centang */
+                border-color: #007bff;
+                /* Mengubah border saat centang */
+            }
+        </style>
+
+
+
+        <!-- Slide 2: Identitas Pemohon -->
+        <div class="step-content" id="step2-diriSendiri" style="display:none;">
+            <h4>Identitas Pemohon</h4>
+            <div class="mb-3"><label class="form-label">Nama</label><input type="text" class="form-control" id="nama-diriSendiri" required>
+                <small class="form-text text-muted">Masukkan nama lengkap sesuai dengan identitas KTP.</small>
+            </div>
+
+
+            <div class="mb-3"><label class="form-label">Jenis Kelamin</label>
+                <select class="form-select" id="jenis-kelamin-diriSendiri" required>
+                    <option value="">-- Pilih --</option>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+                <small class="form-text text-muted">Masukkan nama lengkap sesuai dengan identitas KTP.</small>
+            </div>
+
+
+            <div class="mb-3"><label class="form-label">Tempat Lahir</label><input type="text" class="form-control" id="tempat-lahir-diriSendiri" required>
+                <small class="form-text text-muted">Masukkan nama lengkap sesuai dengan identitas KTP.</small>
+            </div>
+
+
+            <div class="mb-3"><label class="form-label">Tanggal Lahir</label><input type="date" class="form-control" id="tanggal-lahir-diriSendiri" required>
+                <small class="form-text text-muted">Masukkan nama lengkap sesuai dengan identitas KTP.</small>
+            </div>
+
+
+            <div class="mb-3"><label class="form-label">Alamat Sesuai KTP</label><input type="text" class="form-control" id="alamat-diriSendiri" required>
+                <small class="form-text text-muted">Masukkan nama lengkap sesuai dengan identitas KTP.</small>
+            </div>
+
+
+            <div class="mb-3"><label class="form-label">Pekerjaan</label><input type="text" class="form-control" id="pekerjaan-diriSendiri" required>
+                <small class="form-text text-muted">Masukkan nama lengkap sesuai dengan identitas KTP.</small>
+            </div>
+
+
+            <div class="mb-3"><label class="form-label">Pendidikan</label><input type="text" class="form-control" id="pendidikan-diriSendiri" required>
+                <small class="form-text text-muted">Masukkan nama lengkap sesuai dengan identitas KTP.</small>
+            </div>
+
+
+            <div class="mb-3"><label class="form-label">Agama</label>
+                <select class="form-select" id="agama-diriSendiri" required>
+                    <option value="">-- Pilih Agama --</option>
+                    <option value="Islam">Islam</option>
+                    <option value="Kristen">Kristen</option>
+                    <option value="Hindu">Hindu</option>
+                    <option value="Buddha">Buddha</option>
+                    <option value="Konghucu">Konghucu</option>
+                </select>
+                <small class="form-text text-muted">Masukkan nama lengkap sesuai dengan identitas KTP.</small>
+            </div>
+
+
+            <button class="btn btn-secondary mt-3" onclick="showPrevious('step1-diriSendiri')">Previous</button>
+
+            <button class="btn btn-primary mt-3" onclick="validateAndNext('step2-diriSendiri')">Next</button>
+
+        </div>
+
+        <!-- Slide 3: Data Kelahiran -->
+        <div class="step-content" id="step3-diriSendiri" style="display:none;">
+            <h4>Data Kelahiran</h4>
+            <div class="mb-3"><label class="form-label">Nama pada Akta Kelahiran</label><input type="text" class="form-control" id="nama-akta-kelahiran-diriSendiri" required>
+                <small class="form-text text-muted">Masukkan nama lengkap sesuai dengan identitas KTP.</small>
+            </div>
+            <div class="mb-3"><label class="form-label">Nomor Akta Kelahiran</label><input type="text" class="form-control" id="no-akta-diriSendiri" required>
+                <small class="form-text text-muted">Masukkan nama lengkap sesuai dengan identitas KTP.</small>
+            </div>
+            <div class="mb-3"><label class="form-label">Tanggal Akta Kelahiran</label><input type="date" class="form-control" id="tgl-akta-diriSendiri" required>
+                <small class="form-text text-muted">Masukkan nama lengkap sesuai dengan identitas KTP.</small>
+            </div>
+            <div class="mb-3"><label class="form-label">Nama Ayah</label><input type="text" class="form-control" id="nama-ayah-diriSendiri" required>
+                <small class="form-text text-muted">Masukkan nama lengkap sesuai dengan identitas KTP.</small>
+            </div>
+            <div class="mb-3"><label class="form-label">Nama Ibu</label><input type="text" class="form-control" id="nama-ibu-diriSendiri" required>
+                <small class="form-text text-muted">Masukkan nama lengkap sesuai dengan identitas KTP.</small>
+            </div>
+            <div class="mb-3"><label class="form-label">Kabupaten/Kota tempat dikeluarkan Akta Kelahiran</label><input type="text" class="form-control" id="kota-akta-diriSendiri" required>
+                <small class="form-text text-muted">Masukkan nama lengkap sesuai dengan identitas KTP.</small>
+            </div>
+            <button class="btn btn-secondary mt-3" onclick="showPrevious('step2-diriSendiri')">Previous</button>
+
+            <button class="btn btn-primary mt-3" onclick="showNext('step4-diriSendiri')">Next</button>
+        </div>
+
+        <!-- Slide 4: Data Perubahan -->
+        <div class="step-content" id="step4-diriSendiri" style="display:none;">
+            <h4>Permohonan Perubahan Nama</h4>
+            <div class="mb-3"><label class="form-label">Nama Baru</label><input type="text" class="form-control" id="nama-baru-diriSendiri" required>
+                <small class="form-text text-muted">Masukkan nama lengkap sesuai dengan identitas KTP.</small>
+            </div>
+            <div class="mb-3"><label class="form-label">Alasan Perubahan Nama</label><textarea class="form-control" id="alasan-perubahan-diriSendiri" required></textarea>
+                <small class="form-text text-muted">Masukkan nama lengkap sesuai dengan identitas KTP.</small>
+
+            </div>
+
+            <button class="btn btn-secondary mt-3" onclick="showPrevious('step2-diriSendiri')">Previous</button>
+            <button class="btn btn-primary mt-3" onclick="showConfirmation('diri')">Kirim Permohonan DIRI</button>
+        </div>
+    </div>
+
+    <!-- Slides untuk Permohonan Anak -->
+    <div id="anak-steps" style="display:none;">
+        <!-- Slide 1: Persyaratan -->
+        <div class="step-content" id="step1-anak">
+            <h4>Persyaratan</h4>
+            <p>Pastikan semua persyaratan di bawah ini telah dipenuhi:</p>
+            <div class="form-check"><input class="form-check-input" type="checkbox" id="ktp-anak" required><label class="form-check-label" for="ktp-anak">KTP</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" id="kk-anak" required><label class="form-check-label" for="kk-anak">KK</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" id="akta-anak" required><label class="form-check-label" for="akta-anak">Akta Kelahiran anak</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" id="buku-nikah-anak" required><label class="form-check-label" for="buku-nikah-anak">Buku Nikah/Akta Nikah</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" id="surat-pernyataan-anak" required><label class="form-check-label" for="surat-pernyataan-anak">Surat Pernyataan perubahan nama diketahui kepala desa</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" id="surat-domisili-anak" required><label class="form-check-label" for="surat-domisili-anak">Surat keterangan domisili</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" id="surat-permohonan-anak" required><label class="form-check-label" for="surat-permohonan-anak">Surat Permohonan</label></div>
+            <button class="btn btn-primary mt-3" onclick="showNext('step2-anak')">Next</button>
+        </div>
+
+        <!-- Slide 2: Identitas Pemohon -->
+        <div class="step-content" id="step2-anak" style="display:none;">
+            <h4>Identitas Pemohon</h4>
+            <div class="mb-3"><label class="form-label">Nama</label><input type="text" class="form-control" id="nama-anak" required></div>
+            <div class="mb-3"><label class="form-label">Jenis Kelamin</label>
+                <select class="form-select" id="jenis-kelamin-anak" required>
+                    <option value="">-- Pilih --</option>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+            </div>
+            <div class="mb-3"><label class="form-label">Tempat Lahir</label><input type="text" class="form-control" id="tempat-lahir-anak" required></div>
+            <div class="mb-3"><label class="form-label">Tanggal Lahir</label><input type="date" class="form-control" id="tanggal-lahir-anak" required></div>
+            <div class="mb-3"><label class="form-label">Alamat Sesuai KTP</label><input type="text" class="form-control" id="alamat-anak" required></div>
+            <div class="mb-3"><label class="form-label">Pekerjaan</label><input type="text" class="form-control" id="pekerjaan-anak" required></div>
+            <div class="mb-3"><label class="form-label">Pendidikan</label><input type="text" class="form-control" id="pendidikan-anak" required></div>
+            <div class="mb-3"><label class="form-label">Agama</label>
+                <select class="form-select" id="agama-anak" required>
+                    <option value="">-- Pilih Agama --</option>
+                    <option value="Islam">Islam</option>
+                    <option value="Kristen">Kristen</option>
+                    <option value="Hindu">Hindu</option>
+                    <option value="Buddha">Buddha</option>
+                    <option value="Konghucu">Konghucu</option>
+                </select>
+            </div>
+            <button class="btn btn-secondary mt-3" onclick="showPrevious('step1-anak')">Previous</button>
+            <button class="btn btn-primary mt-3" onclick="showNext('step3-anak')">Next</button>
+        </div>
+
+        <!-- Slide 3: Data Perkawinan -->
+        <div class="step-content" id="step3-anak" style="display:none;">
+            <h4>Data Perkawinan</h4>
+            <div class="mb-3"><label class="form-label">Tanggal Perkawinan</label><input type="date" class="form-control" id="tanggal-perkawinan-anak" required></div>
+            <div class="mb-3"><label class="form-label">Nomor Akta Perkawinan</label><input type="text" class="form-control" id="nomor-akta-perkawinan-anak" required></div>
+            <div class="mb-3"><label class="form-label">Pilih Suami/Istri</label>
+                <select class="form-select" id="pasangan-anak" required>
+                    <option value="">-- Pilih --</option>
+                    <option value="Suami">Suami</option>
+                    <option value="Istri">Istri</option>
+                </select>
+            </div>
+            <div class="mb-3"><label class="form-label">Nama Pasangan</label><input type="text" class="form-control" id="nama-pasangan-anak" required></div>
+            <div class="mb-3"><label class="form-label">Tanggal Akta Perkawinan</label><input type="date" class="form-control" id="tanggal-akta-perkawinan-anak" required></div>
+            <div class="mb-3"><label class="form-label">Menikah Secara Agama</label>
+                <select class="form-select" id="agama-perkawinan-anak" required>
+                    <option value="">-- Pilih Agama --</option>
+                    <option value="Islam">Islam</option>
+                    <option value="Kristen">Kristen</option>
+                    <option value="Hindu">Hindu</option>
+                    <option value="Buddha">Buddha</option>
+                    <option value="Konghucu">Konghucu</option>
+                </select>
+            </div>
+            <button class="btn btn-secondary mt-3" onclick="showPrevious('step2-anak')">Previous</button>
+            <button class="btn btn-primary mt-3" onclick="showNext('step4-anak')">Next</button>
+        </div>
+
+        <!-- Slide 4: Permohonan Perubahan Nama Anak -->
+        <div class="step-content" id="step4-anak" style="display:none;">
+            <h4>Permohonan Perubahan Nama Anak</h4>
+            <div class="mb-3"><label class="form-label">Nama Anak</label><input type="text" class="form-control" id="nama-anak-anak" required></div>
+            <div class="mb-3"><label class="form-label">Tempat Lahir Anak</label><input type="text" class="form-control" id="tempat-lahir-anak-anak" required></div>
+            <div class="mb-3"><label class="form-label">Tanggal Lahir Anak</label><input type="date" class="form-control" id="tanggal-lahir-anak-anak" required></div>
+            <div class="mb-3"><label class="form-label">Jenis Kelamin Anak</label>
+                <select class="form-select" id="jenis-kelamin-anak-anak" required>
+                    <option value="">-- Pilih --</option>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+            </div>
+            <div class="mb-3"><label class="form-label">Nomor Akta Kelahiran Anak</label><input type="text" class="form-control" id="nomor-akta-anak-anak" required></div>
+            <div class="mb-3"><label class="form-label">Tanggal Akta Kelahiran Anak</label><input type="date" class="form-control" id="tanggal-akta-anak-anak" required></div>
+            <div class="mb-3"><label class="form-label">Kabupaten/Kota dikeluarkannya Akta Kelahiran Anak</label><input type="text" class="form-control" id="kota-akta-anak-anak" required></div>
+            <button class="btn btn-secondary mt-3" onclick="showPrevious('step3-anak')">Previous</button>
+            <button class="btn btn-primary mt-3" onclick="showConfirmation('anak')">Kirim Permohonan</button>
+        </div>
+    </div>
